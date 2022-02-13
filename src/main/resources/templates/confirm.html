@@ -25,11 +25,18 @@
       入力内容をご確認ください。<br/>
       この内容でお見積りする場合は、「概算お見積もりをする」ボタンを押してください。
     </div>
-    <ul th:if="${#fields.hasErrors('all')}">
-      <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
-    </ul>
     <div class="col-sm-12">
       <div class="sub-title">お客様情報</div>
+      <div class="err"
+            th:if="${#fields.hasErrors('customerName')}"
+            th:errors="*{customerName}"/>
+     <div class="err"
+         th:if="${#fields.hasErrors('tel')}"
+         th:errors="*{tel}"/>
+      <div class="err"
+         th:if="${#fields.hasErrors('email')}"
+         th:errors="*{email}"/>
+
       <table class="table table-bordered">
         <col span="1" style="background-color: #FFFFFF;">
         <col span="2" style="background-color: #FFFFFF;">
@@ -37,7 +44,7 @@
         <tr>
           <th style="width: 40%">氏名</th>
           <td>
-            <span th:text="*{customerName}" />
+             <span th:text="*{customerName}"/>
           </td>
           <input type="hidden" name="customerName" id="customerName" th:value="*{customerName}"/>
         </tr>
@@ -56,6 +63,18 @@
     </div>
     <div class="col-sm-12">
       <div class="sub-title">集荷元・お届け先</div>
+      <div class="err"
+           th:if="${#fields.hasErrors('oldPrefectureId')}"
+           th:errors="*{oldPrefectureId}"/>
+      <div class="err"
+           th:if="${#fields.hasErrors('oldAddress')}"
+           th:errors="*{oldAddress}"/>
+      <div class="err"
+           th:if="${#fields.hasErrors('newPrefectureId')}"
+           th:errors="*{newPrefectureId}"/>
+      <div class="err"
+           th:if="${#fields.hasErrors('newAddress')}"
+           th:errors="*{newAddress}"/>
       <table class="table table-bordered">
         <col span="1" style="background-color: #FFFFFF;">
         <col span="2" style="background-color: #FFFFFF;">
@@ -84,11 +103,31 @@
           <td><span th:text="*{newAddress}"></span></td>
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
         </tr>
+        <tr>
+          <th>距離[km]</th>
+          <td><span th:text="*{distance}"></span>km</td>
+          <input type="hidden" name="distance" id="distance" th:value="*{distance}"/>
+        </tr>
         </tbody>
       </table>
     </div>
     <div class="col-sm-12">
       <div class="sub-title">お荷物情報</div>
+      <div class="err"
+           th:if="${#fields.hasErrors('box')}"
+           th:errors="*{box}"/>
+      <div class="err"
+           th:if="${#fields.hasErrors('bed')}"
+           th:errors="*{bed}"/>
+      <div class="err"
+           th:if="${#fields.hasErrors('bicycle')}"
+           th:errors="*{bicycle}"/>
+      <div class="err"
+           th:if="${#fields.hasErrors('washingMachine')}"
+           th:errors="*{washingMachine}"/>
+      <div class="err"
+           th:if="${#fields.hasErrors('washingMachineInstallation')}"
+           th:errors="*{washingMachineInstallation}"/>
         <table class="table table-bordered">
           <col span="1" style="background-color: #FFFFFF;">
           <col span="2" style="background-color: #FFFFFF;">
@@ -120,6 +159,11 @@
           </tr>
         </tbody>
       </table>
+      <div class="err"
+           th:if="${#fields.hasErrors('all')}">
+        <a>エラー不明時には,こちらにご連絡ください</a><br/>
+        <a>000-0000-0000</a>
+      </div>
       <div class="form-group">
         <div class="text-center">
           <button type="submit" name="backToInput" class="btn-back">入力画面へ戻る</button>
