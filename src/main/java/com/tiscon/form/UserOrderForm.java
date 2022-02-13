@@ -24,6 +24,10 @@ public class UserOrderForm {
     @NotBlank(message = "連絡先メールアドレスを入力してください")
     private String email;
 
+    //引っ越し日
+    @NotBlank
+    private  String movingdate;
+
     @NotBlank(message = "集荷元住所（都道府県）を入力してください")
     private String oldPrefectureId;
 
@@ -80,6 +84,14 @@ public class UserOrderForm {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getMovingdate() {
+        return movingdate;
+    }
+
+    public void setMovingdate(String movingdate) {
+        this.movingdate = movingdate;
     }
 
     public String getOldPrefectureId() {

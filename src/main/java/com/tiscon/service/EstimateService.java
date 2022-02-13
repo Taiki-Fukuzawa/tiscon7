@@ -71,6 +71,15 @@ public class EstimateService {
      * @return 概算見積もり結果の料金
      */
     public Integer getPrice(UserOrderDto dto) {
+        //季節を考慮
+        String movingdate = dto.getMovingdate();
+        int movingdate1 = Integer.parseInt(movingdate);
+        double n = 1;
+        if (movingdate1==3 || movingdate1==4) {
+            n = 1.5;
+        } else if(movingdate1==9) {
+            n = 1.2;
+        }
         //距離を出す
         String distance = dto.getDistance();
         Double distance1 = Double.parseDouble(distance);
@@ -105,8 +114,8 @@ public class EstimateService {
         if (dto.getWashingMachineInstallation()) {
             priceForOptionalService = estimateDAO.getPricePerOptionalService(OptionalServiceType.WASHING_MACHINE.getCode());
         }
-
-        return priceForDistance + pricePerTruck + priceForOptionalService;
+        Double price = (priceForDistance + pricePerTruck) * n+ priceForOptionalService;
+        return price.intValue();
     }
 
     /**
