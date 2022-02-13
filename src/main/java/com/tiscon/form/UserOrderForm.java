@@ -25,7 +25,7 @@ public class UserOrderForm {
     private String email;
 
     //引っ越し日
-    @NotBlank
+    @NotBlank(message = "引っ越し月を入力してください")
     private  String movingdate;
 
     @NotBlank(message = "集荷元住所（都道府県）を入力してください")

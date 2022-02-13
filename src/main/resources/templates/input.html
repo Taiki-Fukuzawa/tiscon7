@@ -28,20 +28,20 @@
         <div class="sub-title">お客様情報</div>
         <div class="form-group">
           <label for="customerName">氏名</label>
-          <input type="text" placeholder="田中　太郎" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎"/>
+          <input type="text" placeholder="田中　太郎" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎" required/>
         </div>
         <div class="form-group">
           <label for="tel">連絡先TEL</label>
-          <input type="tel" placeholder="09012345678" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678"/>
+          <input type="tel" placeholder="09012345678" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678" required/>
         </div>
         <div class="form-group">
           <label for="email">連絡先メールアドレス</label>
-          <input type="text" placeholder="tanaka@gmail.com" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com"/>
+          <input type="text" placeholder="tanaka@gmail.com" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com" required/>
         </div>
         <div class="form-group">
           <label for="movingdate">引っ越し月</label>
-          <input type="number" max="12" min="1" id="movingdate" name="movingdate" th:field="*{movingdate}" class="form-control"
-                 value="1"/>
+          <input type="number" placeholder="1" max="12" min="1" id="movingdate" name="movingdate" th:field="*{movingdate}" class="form-control"
+                 value="1" required/>
         </div>
         <div class="sub-title">集荷元・お届け先</div>
         <div class="form-group">
@@ -53,7 +53,7 @@
         <div class="form-group">
           <label for="oldAddress">集荷元住所（市区町村以下）</label>
           <input type="text" placeholder="○○市○○区○○1−2−3" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
-                 class="form-control" value="新宿区西新宿1-1-1"/>
+                 class="form-control" value="新宿区西新宿1-1-1" required/>
         </div>
         <div class="form-group">
           <label for="newPrefectureId">お届け先住所（都道府県）</label>
@@ -64,12 +64,12 @@
         <div class="form-group">
           <label for="newAddress">お届け先住所（市区町村以下）</label>
           <input type="text" placeholder="○○市○○区○○1−2−3" id="newAddress" name="newAddress" th:field="*{newAddress}" class="form-control"
-                 value="札幌市南区1"/>
+                 value="札幌市南区1" required/>
         </div>
         <div class="form-group">
           <label for="distance">距離[km]</label>
           <input type="text" placeholder="100km" id="distance" name="distance" th:field="*{distance}" class="form-control"
-                 value="札幌市南区1"/>
+                 value="札幌市南区1" required/>
         </div>
         <a href="https://www.8toch.net/utility/utility.cgi?cid=GC00003" >距離が分からない方はこちら</a>
       </fieldset>
@@ -77,20 +77,20 @@
       <div class="sub-title">お荷物情報</div>
         <div class="form-group">
           <label for="box">段ボールの個数</label>
-          <input type="number" placeholder="10" min="0" id="box" name="box" th:field="*{box}" class="form-control" value="10"/>
+          <input type="number" placeholder="10" min="0" id="box" name="box" th:field="*{box}" class="form-control" value="10" required/>
         </div>
         <div class="form-group">
           <label for="bed">ベッドの個数</label>
-          <input type="number" placeholder="10" min="0" id="bed" name="bed" th:field="*{bed}" class="form-control" value="3"/>
+          <input type="number" placeholder="10" min="0" id="bed" name="bed" th:field="*{bed}" class="form-control" value="3" required/>
         </div>
         <div class="form-group">
           <label for="bicycle">自転車の個数</label>
-          <input type="number" placeholder="10" min="0" id="bicycle" name="bicycle" th:field="*{bicycle}" class="form-control" value="1"/>
+          <input type="number" placeholder="10" min="0" id="bicycle" name="bicycle" th:field="*{bicycle}" class="form-control" value="1" required/>
         </div>
         <div class="form-group">
           <label for="washingMachine">洗濯機の個数</label>
           <input type="number" placeholder="10" min="0" id="washingMachine" name="washingMachine" th:field="*{washingMachine}" class="form-control"
-                 value="1"/>
+                 value="1" required/>
         </div>
         <div class="form-group">
           <label for="washingMachineInstallation">洗濯機の設置工事申し込み</label>

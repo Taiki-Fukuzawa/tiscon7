@@ -311,3 +311,10 @@ td {
 .err{
     color: red;
 }
+
+input:required{
+  background: #ffcdd2;
+}
+input:valid{
+  background-color: rgba(0,255,0,0.2) ;
+}

@@ -36,6 +36,9 @@
       <div class="err"
          th:if="${#fields.hasErrors('email')}"
          th:errors="*{email}"/>
+      <div class="err"
+           th:if="${#fields.hasErrors('movingdate')}"
+           th:errors="*{movingdate}"/>
 
       <table class="table table-bordered">
         <col span="1" style="background-color: #FFFFFF;">
@@ -80,6 +83,9 @@
       <div class="err"
            th:if="${#fields.hasErrors('newAddress')}"
            th:errors="*{newAddress}"/>
+      <div class="err"
+           th:if="${#fields.hasErrors('distance')}"
+           th:errors="*{distance}"/>
       <table class="table table-bordered">
         <col span="1" style="background-color: #FFFFFF;">
         <col span="2" style="background-color: #FFFFFF;">
