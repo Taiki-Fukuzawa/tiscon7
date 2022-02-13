@@ -13,15 +13,15 @@ import javax.validation.constraints.NotNull;
  */
 public class UserOrderForm {
 
-    @NotBlank
+    @NotBlank(message = "氏名")
     private String customerName;
 
-    @NotBlank
+    @NotBlank(message = "電話番号")
     @Numeric
     private String tel;
 
     @Email
-    @NotBlank
+    @NotBlank(message = "e-mail")
     private String email;
 
     @NotBlank
@@ -35,6 +35,9 @@ public class UserOrderForm {
 
     @NotBlank
     private String newAddress;
+
+    @NotBlank
+    private String distance;
 
     @Numeric
     @NotBlank
@@ -109,6 +112,12 @@ public class UserOrderForm {
 
     public void setNewAddress(String newAddress) {
         this.newAddress = newAddress;
+    }
+
+    public String getDistance() { return  distance; }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
     }
 
     public String getBox() {

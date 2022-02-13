@@ -84,6 +84,11 @@
           <td><span th:text="*{newAddress}"></span></td>
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
         </tr>
+        <tr>
+          <th>距離[km]</th>
+          <td><span th:text="*{distance}"></span>km</td>
+          <input type="hidden" name="distance" id="distance" th:value="*{distance}"/>
+        </tr>
         </tbody>
       </table>
     </div>
