@@ -83,8 +83,19 @@ public class EstimateService {
                 + getBoxForPackage(dto.getWashingMachine(), PackageType.WASHING_MACHINE);
 
         // 箱に応じてトラックの種類が変わり、それに応じて料金が変わるためトラック料金を算出する。
-        int pricePerTruck = estimateDAO.getPricePerTruck(boxes);
+//        int pricePerTruck = estimateDAO.getPricePerTruck(boxes);
+          int pricePerTruck=0;
+        int y = boxes / 200;
+        int z = boxes % 200;
 
+        if (z > 80) {
+            y=y+1;
+            pricePerTruck = y * 50000;
+        };
+
+        if (z <= 80) {
+            pricePerTruck = 50000 * y +30000;
+        };
         // オプションサービスの料金を算出する。
         int priceForOptionalService = 0;
 
