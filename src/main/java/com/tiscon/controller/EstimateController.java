@@ -139,6 +139,9 @@ public class EstimateController {
         model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
         model.addAttribute("userOrderForm", userOrderForm);
         model.addAttribute("price", price);
+        model.addAttribute("basicPrice", estimateService.getBasicPrice(dto));
+        model.addAttribute("truckPrice", estimateService.getTruckPrice(dto));
+        model.addAttribute("optionPrice", estimateService.getOptionPrice(dto));
         return "result";
     }
 

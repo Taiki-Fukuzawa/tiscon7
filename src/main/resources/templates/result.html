@@ -21,6 +21,25 @@
     <div class="col-sm-12">
       <div class="text-center">
         <div class="primary-text"><span th:text="${price}"></span>円</div>
+<!--        ここに表を産める-->
+          <table class="table table-bordered">
+            <col span="1" style="background-color: #FFFFFF;">
+            <col span="2" style="background-color: #FFFFFF;">
+            <tbody>
+            <tr>
+              <th style="width: 40%">基本料金</th>
+              <td><span th:text="${basicPrice}"></span>円</td>
+            </tr>
+            <tr>
+              <th>トラック輸送費</th>
+              <td><span th:text="${truckPrice}"></span>円</td>
+            </tr>
+            <tr>
+              <th>オプション代</th>
+              <td><span th:text="${optionPrice}"></span>円</td>
+            </tr>
+            </tbody>
+          </table>
         <button type="submit" name="complete" class="btn btn-primary">詳細見積もり依頼へ</button>
       </div>
       <div class="sub-title">お客様情報</div>
