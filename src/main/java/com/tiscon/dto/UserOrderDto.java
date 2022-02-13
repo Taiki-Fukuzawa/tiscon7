@@ -8,6 +8,8 @@ public class UserOrderDto {
 
     private String email;
 
+    private String movingdate;
+
     private String oldPrefectureId;
 
     private String oldAddress;
@@ -15,6 +17,8 @@ public class UserOrderDto {
     private String newPrefectureId;
 
     private String newAddress;
+
+    private String distance;
 
     private String box;
 
@@ -50,6 +54,14 @@ public class UserOrderDto {
         this.email = email;
     }
 
+    public String getMovingdate() {
+        return movingdate;
+    }
+
+    public void setMovingdate(String movingdate) {
+        this.movingdate = movingdate;
+    }
+
     public String getOldPrefectureId() {
         return oldPrefectureId;
     }
@@ -80,6 +92,14 @@ public class UserOrderDto {
 
     public void setNewAddress(String newAddress) {
         this.newAddress = newAddress;
+    }
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
     }
 
     public int getBox() {
